@@ -1,0 +1,432 @@
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cyan: #00f7ff;
+    --blue: #4169ff;
+    --purple: #c000ff;
+    --pink: #ff28a7;
+    --glass: rgba(9, 13, 31, 0.76);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #070b17;
+    color: #fff;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ==============================
+   VIDEO DE FONDO
+================================ */
+
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    background: #070b17;
+}
+
+.background-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(0, 247, 255, 0.12),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4, 7, 20, 0.66),
+            rgba(5, 8, 24, 0.86) 55%,
+            rgba(3, 6, 18, 0.96)
+        );
+}
+
+/* ==============================
+   CONTENEDOR CENTRAL
+================================ */
+
+.container {
+    width: min(100% - 32px, 900px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 42px 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==============================
+   PERFIL
+================================ */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar-frame {
+    position: relative;
+    width: 142px;
+    height: 142px;
+    padding: 4px;
+    margin-bottom: 17px;
+    border-radius: 50%;
+    background: #00f7ff;
+    box-shadow: 0 0 18px rgba(0, 247, 255, 0.25);
+}
+
+.avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #090d1c;
+}
+
+.avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #090d1c;
+}
+
+.profile h1 {
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0, 247, 255, 0.25);
+}
+
+.profile h1 span {
+    color: var(--cyan);
+}
+
+.rol {
+    margin-top: 8px;
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.description {
+    margin-top: 14px;
+    color: #d0d8ee;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+
+/* ==============================
+   REDES SOCIALES
+================================ */
+
+.social-section {
+    width: 100%;
+    margin-top: 42px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.section-title span {
+    color: var(--cyan);
+}
+
+.section-subtitle {
+    margin-top: 7px;
+    color: #b7c3df;
+    font-size: 12px;
+}
+
+.social-grid {
+    width: min(100%, 680px);
+    margin: 23px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.card {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(12, 17, 39, 0.78);
+    backdrop-filter: blur(12px);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card img {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 9px;
+}
+
+.card > span:not(.arrow) {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.arrow {
+    margin-left: auto;
+    color: #a6b4d5;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--cyan);
+    background: rgba(0, 247, 255, 0.09);
+    box-shadow: 0 0 22px rgba(0, 247, 255, 0.12);
+}
+
+.card:hover .arrow {
+    color: var(--cyan);
+    transform: translate(2px, -2px);
+}
+
+/* COLORES DE LAS PLATAFORMAS */
+
+.card.of:hover { border-color: #0098ff; }
+.card.k:hover  { border-color: #39ff14; }
+.card.tt:hover { border-color: #ff1077; }
+.card.ig:hover { border-color: #ff00ff; }
+.card.yt:hover { border-color: #ff3030; }
+.card.dc:hover { border-color: #7583ff; }
+
+/* ==============================
+   PIE DE PÁGINA
+================================ */
+
+footer {
+    width: 100%;
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    text-align: center;
+    color: #8793b1;
+    font-size: 10px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+footer span {
+    color: var(--cyan);
+    font-size: 9px;
+}
+
+/* ==============================
+   ANIMACIONES
+================================ */
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes rgbBorder {
+    from { filter: hue-rotate(0deg); }
+    to   { filter: hue-rotate(360deg); }
+}
+
+/* ==============================
+   MÓVILES
+================================ */
+
+@media (max-width: 480px) {
+    .container {
+        width: calc(100% - 24px);
+        padding-top: 30px;
+    }
+
+    .avatar-frame {
+        width: 120px;
+        height: 120px;
+    }
+
+    .rol {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .music-player {
+        padding: 17px;
+        margin-top: 26px;
+    }
+
+    .disc-container {
+        width: 65px;
+        height: 65px;
+    }
+
+    .player-controls {
+        gap: 18px;
+    }
+
+    .volume-control {
+        width: 83px;
+    }
+
+    .social-grid {
+        gap: 10px;
+    }
+
+    .card {
+        padding: 12px 10px;
+        gap: 9px;
+    }
+
+    .card img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .card > span:not(.arrow) {
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+}
+
+/* Respeta la preferencia de reducir animaciones */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .avatar-frame,
+    .disc-container {
+        animation-duration: 10s;
+    }
+}
+
+/* ===== NEÓN RGB DESDE EL CENTRO ===== */
+
+body {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    background-color: #050713;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 247, 255, 0.32) 0%,
+            rgba(0, 100, 255, 0.22) 18%,
+            rgba(140, 0, 255, 0.16) 35%,
+            rgba(255, 0, 150, 0.10) 48%,
+            transparent 70%
+        );
+
+    background-size: 160% 160%;
+    background-position: center;
+    filter: blur(22px);
+    animation: rgb-centro-expansivo 8s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 25%,
+            rgba(0, 247, 255, 0.05) 55%,
+            rgba(150, 0, 255, 0.10) 78%,
+            rgba(255, 0, 120, 0.13) 100%
+        );
+
+    animation: rgb-pulso-central 5s ease-in-out infinite alternate;
+}
+
+@keyframes rgb-centro-expansivo {
+    0% {
+        transform: scale(0.75);
+        opacity: 0.55;
+        filter: blur(28px) hue-rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1.25);
+        opacity: 1;
+        filter: blur(18px) hue-rotate(45deg);
+    }
+}
+
+@keyframes rgb-pulso-central {
+    from {
+        opacity: 0.45;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none;
+    }
+}
